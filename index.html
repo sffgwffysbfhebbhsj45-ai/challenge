@@ -3,54 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>جاري تحويلك إلى حلقة التحدي...</title>
+    <title>جاري تحويلك إلى الفيديو...</title>
     <style>
         body {
             font-family: Tahoma, sans-serif;
-            background-color: #121212;
-            color: #ffffff;
+            background-color: #f4f4f9;
             text-align: center;
-            padding-top: 50px;
+            padding: 20px;
+            margin: 0;
         }
         .container {
             max-width: 600px;
-            margin: 0 auto;
-            background: #1e1e1e;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            margin: 40px auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
-        .timer {
-            font-size: 24px;
-            color: #4CAF50;
+        h2 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+        #counter {
+            font-size: 48px;
+            color: #e74c3c;
             font-weight: bold;
             margin: 20px 0;
+        }
+        p {
+            color: #666;
+            font-size: 16px;
+        }
+        .ad-container {
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h2>🔥 جاري تجهيز حلقة التحدي...</h2>
-        <p>يرجى الانتظار قليلاً بينما يتم تحميل المحتوى.</p>
-        
-        <!-- مكان الإعلان التجريبي المحترم -->
-        <div style="background: #2c2c2c; padding: 15px; border-radius: 8px; border: 1px dashed #4CAF50; color: #fff; margin: 20px 0;">
-            <p style="margin: 0 0 5px 0; font-size: 12px; color: #aaa;">إعلان تجريبي (راعي الصفحة)</p>
-            <h3 style="margin: 0; color: #ffeb3b; font-size: 16px;">🎮 لعبة مغامرات الحصن الجديدة - العب الآن</h3>
+        <h2>يرجى الانتظار قليلاً...</h2>
+        <p>سيتم تحويلك إلى صفحة الفيديو خلال:</p>
+        <div id="counter">10</div>
+
+        <!-- مكان إعلان Adsterra البانر -->
+        <div class="ad-container">
+            <script type="text/javascript">
+              atOptions = {
+                'key' : '56eb40a5a259b80d56d406c82cd1855b',
+                'format' : 'iframe',
+                'height' : 250,
+                'width' : 300,
+                'params' : {}
+              };
+            </script>
+            <script type="text/javascript" src="https://dcengg.org/22/56eb40a5a259b80d56d406c82cd1855b.js"></script>
         </div>
 
-        <div class="timer">ستفتح الحلقة خلال: <span id="count">5</span> ثوانٍ</div>
+        <p>شكراً لتفهمك ودعمك المستمر!</p>
     </div>
 
     <script>
-        var seconds = 5;
-        var countdown = setInterval(function() {
-            seconds--;
-            document.getElementById("count").textContent = seconds;
-            if (seconds <= 0) {
-                clearInterval(countdown);
-                window.location.href = "https://youtu.be/cu_YMPETww4?si=noMub9hmod5E96Lf";
+        // رابط الفيديو الخاص بك
+        var targetUrl = "https://youtu.be/cu_YMPETww4?si=3L6qHftJDzFZ7VRr"; 
+
+        var timeLeft = 10;
+        var countdownElement = document.getElementById("counter");
+
+        var downloadTimer = setInterval(function(){
+            timeLeft--;
+            countdownElement.textContent = timeLeft;
+            if(timeLeft <= 0){
+                clearInterval(downloadTimer);
+                window.location.href = targetUrl;
             }
         }, 1000);
     </script>
